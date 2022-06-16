@@ -10,6 +10,7 @@ refs.start.addEventListener('click', onStart);
 function onStart() {
   intID = setInterval(changeBgCol, 1000);
   refs.start.classList.add('disabled');
+  refs.stop.classList.remove('disabled');
 }
 
 function getRandomHexColor() {
@@ -25,4 +26,5 @@ refs.stop.addEventListener('click', onStop);
 function onStop() {
   clearInterval(intID);
   refs.start.classList.remove('disabled');
+  refs.stop.classList.add('disabled');
 }
