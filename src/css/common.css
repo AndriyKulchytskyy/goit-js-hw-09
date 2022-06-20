@@ -21,3 +21,23 @@ img {
   pointer-events: none;
   opacity: 0.4;
 }
+
+.timer {
+  margin-top: 40px;
+  display: flex;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.value {
+  font-size: 60px;
+}
+
+.label {
+  text-transform: uppercase;
+}

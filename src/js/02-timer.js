@@ -41,6 +41,10 @@ refs.picker.addEventListener('input', flatpickr);
 
 flatpickr('input#datetime-picker', options);
 
+function pad(value) {
+  return String(value).padStart(2, '0');
+}
+
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
@@ -71,9 +75,11 @@ function onStart() {
       clearInterval(intervalID);
     }
 
-    countDown.days.textContent = timeLeft.days;
-    countDown.hours.textContent = timeLeft.hours;
-    countDown.minutes.textContent = timeLeft.minutes;
-    countDown.seconds.textContent = timeLeft.seconds;
+    const { days, hours, minutes, seconds } = timeLeft;
+
+    countDown.days.textContent = pad(days);
+    countDown.hours.textContent = pad(hours);
+    countDown.minutes.textContent = pad(minutes);
+    countDown.seconds.textContent = pad(seconds);
   }, UPDATE_TIME);
 }
